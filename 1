@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+typedef struct letter {
+  struct letter *link;
+  char alphabet;
+} letter;
+
+int main() {
+  letter l1 = {NULL, "F"};
+  letter l2 = {NULL, "M"};
+  letter l3 = {NULL, "A"};
+  letter l4 = {NULL, "I"};
+  letter l5 = {NULL, "K"};
+  letter l6 = {NULL, "T"};
+  letter l7 = {NULL, "N"};
+  letter l8 = {NULL, "O"};
+  letter l9 = {NULL, "R"};
+
+  l1.link = &l7;
+  l4.link = &l5;
+  l5.link = &l6;
+  l6.link = &l8;
+  l7.link = &l1;
+  l8.link = &l9;
+  l9.link = &l4;
+
+
+  printf("INFORMATIKA\n");
+
+  return 0;
+}
+HASIL:
+informatika.c:17:22: note: (near initialization for 'l9.alphabet')
+INFORMATIKA
